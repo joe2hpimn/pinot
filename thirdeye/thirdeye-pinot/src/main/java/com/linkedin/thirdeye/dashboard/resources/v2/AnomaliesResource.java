@@ -14,6 +14,7 @@ import com.linkedin.thirdeye.dashboard.resources.v2.pojo.AnomaliesSummary;
 import com.linkedin.thirdeye.dashboard.resources.v2.pojo.AnomaliesWrapper;
 import com.linkedin.thirdeye.dashboard.resources.v2.pojo.AnomalyDataCompare;
 import com.linkedin.thirdeye.dashboard.resources.v2.pojo.AnomalyDetails;
+import com.linkedin.thirdeye.dashboard.resources.v2.pojo.SearchFilters;
 import com.linkedin.thirdeye.dashboard.views.TimeBucket;
 import com.linkedin.thirdeye.datalayer.bao.DatasetConfigManager;
 import com.linkedin.thirdeye.datalayer.bao.OverrideConfigManager;
@@ -581,6 +582,8 @@ public class AnomaliesResource {
     }
     anomaliesWrapper.setAnomalyDetailsList(anomalyDetailsList);
 
+    //set the search filters
+    anomaliesWrapper.setSearchFilters(SearchFilters.fromAnomalies(mergedAnomalies));
     return anomaliesWrapper;
   }
 

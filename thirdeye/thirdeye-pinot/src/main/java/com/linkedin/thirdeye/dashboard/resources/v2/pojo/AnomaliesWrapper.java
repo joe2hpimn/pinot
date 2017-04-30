@@ -5,10 +5,18 @@ import java.util.List;
 
 public class AnomaliesWrapper {
 
+  private SearchFilters searchFilters;
   private List<AnomalyDetails> anomalyDetailsList = new ArrayList<>();
   private int totalAnomalies;
   private int numAnomaliesOnPage;
 
+  public SearchFilters getSearchFilters() {
+    return searchFilters;
+  }
+  public void setSearchFilters(SearchFilters searchFilters) {
+    this.searchFilters = searchFilters;
+  }
+  
   public List<AnomalyDetails> getAnomalyDetailsList() {
     return anomalyDetailsList;
   }
